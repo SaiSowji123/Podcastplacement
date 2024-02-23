@@ -4,9 +4,9 @@ import "./styles.css";
 function Loader() {
   return (
     <div className='wrapper'>
-      <div class="lds-ripple"><div></div><div></div></div>
+      <div className="lds-ripple"><div></div><div></div></div>
     </div>
   )
 }
 
-export default Loader
+export default Loader;

@@ -63,7 +63,7 @@ function PodcastDetailsPage() {
     return (
         <div>
             <Header />
-            <div className="input-wrapper" style={{ marginTop: "0rem" }}>
+            <div className="input-wrapper" style={{ marginTop: "0rem", marginBottom: "4rem" }}>
                 {podcast.id && (
                     <>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
@@ -79,7 +79,7 @@ function PodcastDetailsPage() {
                         <h1 className='podcast-title-heading'>Episodes</h1>
                         {episodes.length > 0 ? (
                             <>{episodes.map((episode, index) => {
-                                return <EpisodeDetails key={index} index={index + 1} title={episode.title} description={episode.description} audioFile={episode.audioFile} onClick={(file) => setPlayingFile(file)} isPlaying={playingFile !== ""} />
+                                return <EpisodeDetails key={index} index={index + 1} title={episode.title} description={episode.description} audioFile={episode.audioFile} onClick={(file) => setPlayingFile(file)} />
                             })}</>) : (
                             <p>No Episodes Available</p>
                         )}

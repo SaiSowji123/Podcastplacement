@@ -1,0 +1,62 @@
+*{
+    margin-bottom: 1%;
+}
+  
+  .profile-content h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+.profile-card {
+    width: 200px;
+    min-height: 250px;
+    background: linear-gradient(177.7deg, rgba(58, 129, 191, 0.3) 1.63%, rgba(65, 48, 90, 0.009) 148.18%);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  
+  .profile-card:hover{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .profile-container {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .profile-content {
+    text-align: left;
+  }
+  
+  .profile-left {
+    flex: 0 0 auto;
+  }
+  
+  /* .profile-right {
+    flex: 1;
+    margin-left: 2rem; 
+  } */
+  
+  .your-podcasts {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .profile-content {
+        flex-direction: row;
+        justify-content: center;
+    }
+  
+    .profile-left {
+        margin-right: 2rem; /* Add margin between profile image and other details */
+    }
+  }
