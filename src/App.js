@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignUpPage from './pages/SignUpPage';
 import Profile from './pages/Profile';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, db } from './firebase';
@@ -37,7 +37,7 @@ function App() {
             }
           },
           (error) => {
-            console.log("Error fetching user data:", error);
+            toast.error("Error fetching user data");
           }
         );
         return () => {

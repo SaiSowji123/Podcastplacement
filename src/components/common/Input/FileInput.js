@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 function FileInput({ accept, id, fileHandleFun, text }) {
     const [fileSelected, setFileSelected] = useState("")
     const onChange = (e) => {
-        console.log(e.target.files);
         setFileSelected(e.target.files[0].name);
         fileHandleFun(e.target.files[0])
     }

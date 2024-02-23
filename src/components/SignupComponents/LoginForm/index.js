@@ -17,7 +17,6 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    console.log("Handling Login");
     setLoading(true);
     if (email && password) {
       try {

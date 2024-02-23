@@ -15,7 +15,6 @@ function PodcastDetailsPage() {
     const [episodes, setEpisodes] = useState([]);
     const [playingFile, setPlayingFile] = useState("");
     const [createdByUser, setCreatedByUser] = useState(null);
-    console.log("ID:", id);
 
     useEffect(() => {
         if (id) {
@@ -29,7 +28,6 @@ function PodcastDetailsPage() {
             const docSnap = await getDoc(docRef);
 
             if (docSnap.exists()) {
-                console.log("Document data:", docSnap.data());
                 setPodcast({ id: id, ...docSnap.data() });
                 const createdByUserId = docSnap.data().createdBy;
                 const userDocRef = doc(db, "users", createdByUserId);
@@ -58,7 +56,7 @@ function PodcastDetailsPage() {
                 setEpisodes(episodesData);
             },
             (error) => {
-                console.log("Error fetching episodes", error)
+                toast.error(error.message);
             }
         );
 
