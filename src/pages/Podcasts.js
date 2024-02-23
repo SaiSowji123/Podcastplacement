@@ -35,7 +35,7 @@ function PodcastsPage() {
     return (
         <div>
             <Header />
-            <div className='input-wrapper' >
+            <div className='input-wrapper space' >
                 <h1>Discover Podcasts</h1>
                 <InputComponent state={search} setState={setSearch} placeholder="Search By Title" type="text" />
                 {filteredPodcasts.length > 0 ? (

@@ -14,6 +14,7 @@ function PodcastDetailsPage() {
     const navigate = useNavigate();
     const [episodes, setEpisodes] = useState([]);
     const [playingFile, setPlayingFile] = useState("");
+    const [createdByUser, setCreatedByUser] = useState(null);
     console.log("ID:", id);
 
     useEffect(() => {
@@ -30,6 +31,12 @@ function PodcastDetailsPage() {
             if (docSnap.exists()) {
                 console.log("Document data:", docSnap.data());
                 setPodcast({ id: id, ...docSnap.data() });
+                const createdByUserId = docSnap.data().createdBy;
+                const userDocRef = doc(db, "users", createdByUserId);
+                const userDocSnap = await getDoc(userDocRef);
+                if (userDocSnap.exists()) {
+                    setCreatedByUser(userDocSnap.data());
+                }
             } else {
                 // docSnap.data() will be undefined in this case
                 toast.error("No such Podcast!");
@@ -63,7 +70,7 @@ function PodcastDetailsPage() {
     return (
         <div>
             <Header />
-            <div className="input-wrapper" style={{ marginTop: "0rem", marginBottom: "4rem" }}>
+            <div className="input-wrapper space" style={{ marginBottom: "4rem" }}>
                 {podcast.id && (
                     <>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>
@@ -82,6 +89,9 @@ function PodcastDetailsPage() {
                                 return <EpisodeDetails key={index} index={index + 1} title={episode.title} description={episode.description} audioFile={episode.audioFile} onClick={(file) => setPlayingFile(file)} />
                             })}</>) : (
                             <p>No Episodes Available</p>
+                        )}
+                        {createdByUser && (
+                            <p className='createdby'>Created by: {createdByUser.name}</p>
                         )}
                         {/* <a href={`https://open.spotify.com/show/${podcast.spotifyId}`} target="_blank">Listen on Spotify</a> */}
                     </>

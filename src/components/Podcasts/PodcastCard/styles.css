@@ -21,7 +21,13 @@
 }
 
 .title-podcast {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: var(--white);
     text-decoration: none !important;
-    margin: 0.5rem 0rem;
+}
+
+.faplay:hover {
+    color: var(--white) !important;
 }

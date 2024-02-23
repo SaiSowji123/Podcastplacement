@@ -2,7 +2,7 @@
     margin-bottom: 1%;
 }
   
-  .profile-content h1 {
+  .profile-content .input-wrapper {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
@@ -59,4 +59,9 @@
     .profile-left {
         margin-right: 2rem; /* Add margin between profile image and other details */
     }
+  }
+
+  .createdby {
+    font-size: 16px;
+    color: var(--purple-grey);
   }

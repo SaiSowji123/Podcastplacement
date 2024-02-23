@@ -50,15 +50,15 @@ function Profile() {
         <div>
             <Header />
             {user ? (
-                <div className="profile-content">
+                <div className="profile-content space">
                     <h1 className='input-wrapper'>Profile</h1>
                     <div className="profile-container">
                         <img src={user.profileImageUrl} alt="Profile" className='profile-card' />
-                        <div className="profile-details">
+                        <div className="profile-left">
                             <h1>{user.name}</h1>
                             <p>{user.email}</p>
                             <p>{user.uid}</p>
-                            <Button text="Logout" onClick={handleLogout} style={{ width: "200px" }} />
+                            <Button text="Logout" onClick={handleLogout} style={{ width: "200px", marginLeft: 0, fontSize: "20px" }} />
                         </div>
                     </div>
                     <div className="your-podcasts">

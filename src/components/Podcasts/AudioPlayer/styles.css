@@ -1,9 +1,8 @@
 .custom-audio-player {
     width: 100vw;
     position: fixed;
-    bottom: 0%;
+    bottom: 0;
     left: 0;
-    padding: 0.5rem 0rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +11,7 @@
 }
 
 .display-image-player {
+    margin-top: 1%;
     height: 50px;
     width: 50px;
     object-fit: cover;
@@ -21,6 +21,7 @@
 .duration-range {
     filter: hue-rotate(280deg);
     width: 100%;
+    margin-top: 2%;
 }
 
 .duration-flex {
@@ -34,6 +35,7 @@
 .volume-range {
     filter: hue-rotate(20deg);
     width: 30%;
+    margin-top: 2%;
 }
 
 .audio-btn {

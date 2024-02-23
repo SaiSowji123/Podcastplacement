@@ -41,6 +41,10 @@ a {
   margin-bottom: 2rem;
 }
 
+.space {
+  margin-top: 4%;
+}
+
 .login {
   color: var(--blue);
   cursor: pointer;
@@ -84,4 +88,58 @@ a {
   color: var(--purple-grey);
   text-align: justify;
   width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .space {
+    margin-top: 6%;
+  }
+}
+
+@media only screen and (max-width: 970px) {
+  .space {
+    margin-top: 8%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .space {
+    margin-top: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .space {
+    margin-top: 12%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .space {
+    margin-top: 14%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .space {
+    margin-top: 17%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .space {
+    margin-top: 22%;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .space {
+    margin-top: 28%;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .space {
+    margin-top: 35%;
+  }
 }

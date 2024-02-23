@@ -6,7 +6,7 @@ function CreateAPodcastPage() {
   return (
     <div>
       <Header />
-      <div className="input-wrapper">
+      <div className="input-wrapper space">
         <h1>Create A Podcast</h1>
         <CreatePodcastForm />
       </div>
