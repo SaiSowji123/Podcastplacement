@@ -68,7 +68,7 @@ function PodcastDetailsPage() {
     return (
         <div>
             <Header />
-            <div className="input-wrapper space" style={{ marginBottom: "4rem" }}>
+            <div className="input-wrapper space">
                 {podcast.id && (
                     <>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%" }}>

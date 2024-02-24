@@ -98,17 +98,23 @@ function AudioPlayer({ audioSrc, image }) {
 
     return (
         <div className='custom-audio-player'>
-            <img src={image} alt="Album Cover" className='display-image-player' />
-            <audio ref={audioRef} src={audioSrc} />
-            <p className='audio-btn' onClick={handleSkipBackward}><FaBackward /></p>
-            <p className='audio-btn' onClick={togglePlay}>{isPlaying ? <FaPause /> : <FaPlay />}</p>
-            <p className='audio-btn' onClick={handleSkipForward}><FaForward /></p>
+            <span id='controls'>
+                <img src={image} alt="Album Cover" className='display-image-player' />
+                <audio ref={audioRef} src={audioSrc} />
+                <p className='audio-btn' onClick={handleSkipBackward}><FaBackward /></p>
+                <p className='audio-btn' onClick={togglePlay}>{isPlaying ? <FaPause /> : <FaPlay />}</p>
+                <p className='audio-btn' onClick={handleSkipForward}><FaForward /></p>
+                <span className='volume'>
+                    <p className='audio-btn' onClick={toggleMute}>{!isMute ? <FaVolumeUp /> : <FaVolumeMute />}</p>
+                    <input type='range' value={volume} max={1} min={0} step=".001" onChange={handleVolume} className='volume-range' />
+                </span>
+            </span>
             <div className='duration-flex'>
-                <p>{formatTime(currentTime)}</p>
-                <input type='range' max={duration} value={currentTime} step={0.01} onChange={handleDuration} className='duration-range' />
-                <p>{formatTime(duration - currentTime)}</p>
-                <p className='audio-btn' onClick={toggleMute}>{!isMute ? <FaVolumeUp /> : <FaVolumeMute />}</p>
-                <input type='range' value={volume} max={1} min={0} step=".001" onChange={handleVolume} className='volume-range' />
+                <span className='time'>
+                    <p>{formatTime(currentTime)}</p>
+                    <input type='range' max={duration} value={currentTime} step={0.01} onChange={handleDuration} className='duration-range' />
+                    <p>{formatTime(duration - currentTime)}</p>
+                </span>
             </div>
         </div>
     )

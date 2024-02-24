@@ -90,6 +90,20 @@ a {
   width: 100%;
 }
 
+.space {
+  margin-bottom: 3.5rem;
+}
+
+.forgot-password {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: var(--purple-grey);
+}
+
+.forgot-password:hover{
+  color: var(--white);
+}
+
 @media only screen and (max-width: 1200px) {
   .space {
     margin-top: 6%;
@@ -99,6 +113,12 @@ a {
 @media only screen and (max-width: 970px) {
   .space {
     margin-top: 8%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .space {
+    margin-bottom: 8.5rem;
   }
 }
 

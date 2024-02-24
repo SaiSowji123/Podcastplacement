@@ -18,13 +18,28 @@ function SignupForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [profileImage, setProfileImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [fileError, setFileError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSignup = async () => {
     setLoading(true);
+    const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+
+    if (!passwordPattern.test(password)) {
+      toast.error("Password must contain at least 8 characters, including uppercase, lowercase, numbers, and a special.");
+      setLoading(false);
+      return;
+    }
+
     if (password !== confirmPassword) {
       toast.error('Passwords do not match!');
+      setLoading(false);
+      return;
+    }
+
+    if (!profileImage) {
+      setFileError("Profile image is required.");
       setLoading(false);
       return;
     }
@@ -77,7 +92,8 @@ function SignupForm() {
       <InputComponent state={email} setState={setEmail} placeholder="Email" type="text" required={true} />
       <InputComponent state={password} setState={setPassword} placeholder="Password" type="password" required={true} />
       <InputComponent state={confirmPassword} setState={setConfirmPassword} placeholder="Confirm Password" type="password" required={true} />
-      <FileInput accept={'image/*'} id="profile-image-input" fileHandleFun={setProfileImage} text={"Upload Profile Image"} />
+      <FileInput accept={'image/*'} id="profile-image-input" fileHandleFun={setProfileImage} text={"Upload Profile Image"} required={true} />
+      {fileError && <p style={{ color: "red" }}>{fileError}</p>}
       <Button text={loading ? "Loading..." : "Signup"} disabled={loading} onClick={handleSignup} />
     </>
   );
