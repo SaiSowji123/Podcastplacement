@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/common/Header'
-import { collection, onSnapshot, query, where } from 'firebase/firestore';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../firebase';
 import { setPodcasts } from '../slices/podcastSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,9 +12,8 @@ function PodcastsPage() {
     const podcasts = useSelector((state) => state.podcasts.podcasts);
     const [search, setSearch] = useState("");
     const [genre, setGenre] = useState("");
-    const [otherSpecify, setOtherSpecify] = useState("");
 
-    const allGenres = ["Alternative", "Blues", "Classical", "Country", "Electronic", "Hip Hop", "Jazz", "Pop", "R&B", "Rock", "Action", "Adventure", "Comedy", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller"];
+    const allGenres = ["Blues", "Classical", "Country", "Electronic", "Hip Hop", "Jazz", "Mashup", "Pop", "R&B", "Rock", "Action", "Adventure", "Comedy", "Drama", "Fantasy", "Horror", "Mystery", "Romance", "Science Fiction", "Thriller"];
 
     useEffect(() => {
         const unsubscribe = onSnapshot(
@@ -68,13 +67,13 @@ function PodcastsPage() {
                         <option value="All Genres">All Genres</option>
                         </optgroup>
                         <optgroup label="Music">
-                            <option value="Alternative">Alternative</option>
                             <option value="Blues">Blues</option>
                             <option value="Classical">Classical</option>
                             <option value="Country">Country</option>
                             <option value="Electronic">Electronic</option>
                             <option value="Hip Hop">Hip Hop</option>
                             <option value="Jazz">Jazz</option>
+                            <option value="Mashup">Mashup</option>
                             <option value="Pop">Pop</option>
                             <option value="R&B">R&B</option>
                             <option value="Rock">Rock</option>

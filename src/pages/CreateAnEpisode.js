@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../components/common/Header'
 import { useNavigate, useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import InputComponent from '../components/common/Input';
 import Button from '../components/common/Button';
 import FileInput from '../components/common/Input/FileInput';
@@ -17,7 +16,6 @@ function CreateAnEpisodePage() {
     const [audioFile, setAudioFile] = useState();
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     const audioFileHandle = (file) => {
         setAudioFile(file);

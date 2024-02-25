@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import InputComponent from '../common/Input';
 import Button from '../common/Button';
@@ -18,7 +17,6 @@ function CreatePodcastForm() {
     const [loading, setLoading] = useState(false);
     const [otherSpecify, setOtherSpecify] = useState("");
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     const handleSubmit = async () => {
         toast.info("Creating Podcast");
@@ -88,17 +86,17 @@ function CreatePodcastForm() {
             <FileInput accept={'image/*'} id="banner-image-input" fileHandleFun={bannerImageHandle} text={"Banner Image Upload"} />
             <div style={{ display: "flex", marginBottom: "2rem" }}>
                 <span className="genre-label">
-                    <label htmlFor="genre-w">Genre:</label>
+                    <label htmlFor="genre-w">Genre</label>
                     <select id="genre-w" value={genre} onChange={(e) => setGenre(e.target.value)} required>
                         <option value="">Select Genre</option>
                         <optgroup label="Music">
-                            <option value="Alternative">Alternative</option>
                             <option value="Blues">Blues</option>
                             <option value="Classical">Classical</option>
                             <option value="Country">Country</option>
                             <option value="Electronic">Electronic</option>
                             <option value="Hip Hop">Hip Hop</option>
                             <option value="Jazz">Jazz</option>
+                            <option value="Mashup">Mashup</option>
                             <option value="Pop">Pop</option>
                             <option value="R&B">R&B</option>
                             <option value="Rock">Rock</option>

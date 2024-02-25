@@ -23,6 +23,7 @@ function SignupForm() {
   const dispatch = useDispatch();
 
   const handleSignup = async () => {
+    toast.info("Creating Profile");
     setLoading(true);
     const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
 

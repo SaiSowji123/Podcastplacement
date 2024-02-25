@@ -127,7 +127,7 @@ a {
   border-radius: 0.5rem;
   border: 1px solid var(--purple-grey);
   background-color: var(--theme);
-  color: #333;
+  color: var(--grey);
   outline: none;
   transition: border-color 0.3s ease;
 }
@@ -160,7 +160,7 @@ a {
   cursor: pointer;
 }
 option {
-  background: var(--blue) !important;
+  background: var(--purple-grey) !important;
 }
 
 .other {
