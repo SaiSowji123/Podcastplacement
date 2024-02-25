@@ -50,8 +50,8 @@ function Profile() {
         <div>
             <Header />
             {user ? (
-                <div className="profile-content space">
-                    <h1 className='input-wrapper'>Profile</h1>
+                <div className="input-wrapper space">
+                    <h1>Profile</h1>
                     <div className="profile-container">
                         <img src={user.profileImageUrl} alt="Profile" className='profile-card' />
                         <div className="profile-left">

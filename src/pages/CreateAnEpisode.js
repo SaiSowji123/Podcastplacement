@@ -64,7 +64,7 @@ function CreateAnEpisodePage() {
         <div>
             <Header />
             <div className='input-wrapper space'>
-                <h1>Create an Episode</h1>
+                <h1 style={{color: "white"}}>Create an Episode</h1>
                 <InputComponent state={title} setState={setTitle} placeholder="Title" type="text" required={true} />
                 <InputComponent state={desc} setState={setDesc} placeholder="Description" type="text" required={true} />
                 <FileInput accept={'audio/*'} id="audio-file-input" fileHandleFun={audioFileHandle} text={"Upload Audio File"} />

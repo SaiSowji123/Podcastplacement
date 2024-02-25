@@ -104,6 +104,79 @@ a {
   color: var(--white);
 }
 
+#genre {
+  width: 80%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--purple-grey);
+  background-color: var(--theme);
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#genre:focus {
+  border-color: var(--white);
+}
+
+#genre-w {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--purple-grey);
+  background-color: var(--theme);
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#genre-w:focus {
+  border-color: var(--white);
+}
+
+.genre-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  user-select: none;
+  flex-wrap: wrap;
+  width: 100% !important;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /*flex-direction: column;*/
+}
+
+.dropdown select {
+  cursor: pointer;
+}
+option {
+  background: var(--blue) !important;
+}
+
+.other {
+  width: 100%;
+  font-size: 0.9em;
+  padding: 0.5rem;
+  border: 2px solid var(--purple-grey);
+  color: black;
+  transition: border-color 0.3s ease;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 6.8%;
+  margin-left: 10px;
+  
+}
+
 @media only screen and (max-width: 1200px) {
   .space {
     margin-top: 6%;
@@ -128,38 +201,40 @@ a {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .space {
-    margin-top: 12%;
+    margin-top: 0;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .space {
-    margin-top: 14%;
+  .other {
+    margin-top: 8%;
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .space {
-    margin-top: 17%;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .space {
-    margin-top: 22%;
+@media only screen and (max-width: 420px) {
+  .other {
+    margin-top: 9%;
   }
 }
 
 @media only screen and (max-width: 350px) {
   .space {
-    margin-top: 28%;
+    margin-top: 15%;
+  }
+
+  .other {
+    margin-top: 10%;
   }
 }
 
 @media only screen and (max-width: 300px) {
   .space {
-    margin-top: 35%;
+    margin-top: 20%;
+  }
+
+  .other {
+    margin-top: 12%;
   }
 }

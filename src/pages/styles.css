@@ -2,12 +2,6 @@
     margin-bottom: 1%;
 }
   
-  .profile-content .input-wrapper {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-  }
 
 .profile-card {
     width: 200px;
@@ -25,7 +19,6 @@
   }
   
   .profile-container {
-    margin-top: 3%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -49,6 +42,37 @@
     margin-top: 2rem;
     text-align: center;
   }
+
+  .createdby {
+    font-size: 16px;
+    color: var(--purple-grey);
+  }
+
+  .or {
+    color: var(--purple-grey);
+    font-weight: bolder;
+  }
+
+  .name {
+    padding: 1rem;
+    font-size: large;
+    cursor: default;
+  }
+
+  .random-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.random-button:hover {
+    background-color: #0056b3;
+}
   
   @media (min-width: 768px) {
     .profile-content {
@@ -59,9 +83,4 @@
     .profile-left {
         margin-right: 2rem; /* Add margin between profile image and other details */
     }
-  }
-
-  .createdby {
-    font-size: 16px;
-    color: var(--purple-grey);
   }
