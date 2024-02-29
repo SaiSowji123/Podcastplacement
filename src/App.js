@@ -19,12 +19,15 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // Effect hook to manage user authentication and fetching user data
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
       if (user) {
+        // If user is logged in, fetch user data from Firestore
         const unsubscribeSnapshot = onSnapshot(
           doc(db, "users", user.uid),
           (userDoc) => {
             if (userDoc.exists()) {
+              // If user data exists, dispatch action to set user data in Redux store
               const userData = userDoc.data();
               dispatch(
                 setUser({
@@ -37,36 +40,46 @@ function App() {
             }
           },
           (error) => {
+            // Handle error while fetching user data
             toast.error("Error fetching user data");
           }
         );
         return () => {
+          // Unsubscribe from user data snapshot listener when component unmounts
           unsubscribeSnapshot();
         };
       }
     });
 
     return () => {
+      // Unsubscribe from authentication listener when component unmounts
       unsubscribeAuth();
     };
   }, []);
 
   return (
+    // Render main application component
     <div className="App">
+      {/* Toast container for displaying notifications */}
       <ToastContainer />
+      {/* Router component for managing navigation */}
       <Router>
+        {/* Routes component for defining routes */}
         <Routes>
+          {/* Route for sign-up page */}
           <Route path='/' element={<SignUpPage />}></Route>
+          {/* Private routes accessible only when user is logged in */}
           <Route element={<PrivateRoutes />}>
+            {/* Route for user profile */}
             <Route path='/profile' element={<Profile />}></Route>
+            {/* Route for creating a podcast */}
             <Route path='/create-a-podcast' element={<CreateAPodcastPage />}></Route>
+            {/* Route for listing podcasts */}
             <Route path='/podcasts' element={<PodcastsPage />}></Route>
+            {/* Route for podcast details */}
             <Route path='/podcast/:id' element={<PodcastDetailsPage />}></Route>
+            {/* Route for creating an episode for a podcast */}
             <Route path='/podcast/:id/create-episode' element={<CreateAnEpisodePage />}></Route>
-            {/* 
-            <Route path='/podcasts' element={<Podcasts />}></Route>
-            <Route path='/podcast/:podcastId' element={<PodcastDetails />}></Route>
-             */}
           </Route>
         </Routes>
       </Router>
